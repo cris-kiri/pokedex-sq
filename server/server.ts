@@ -4,12 +4,10 @@ import cors, { CorsOptions } from 'cors'
 
 const server = express()
 
-server.get('/api/v1/greeting', (req, res) => {
-  const greetings = ['hola', 'hi', 'hello', 'howdy']
-  const index = Math.floor(Math.random() * greetings.length)
-  console.log(index)
-  res.json({ greeting: greetings[index] })
-})
+// Server configuration
+const publicFolder = Path.resolve('public')
+server.use(express.static(publicFolder))
+server.use(express.urlencoded({ extended: false }))
 
 server.use(express.json())
 server.use(cors('*' as CorsOptions))
