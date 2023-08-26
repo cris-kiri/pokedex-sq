@@ -1,4 +1,12 @@
-# Boilerplate: React with Express and Vite
+# Pokedex-SQ
+
+My personal project for Dev Academy focusing on implementing software quality measures and applying best practices for the following web technoogies:
+
+- react
+- typescript
+- consuming API's
+
+I will create a simplified version of a Pokedex, as a web app, and apply software quality measures and best practices.
 
 This is a starter project that uses Vite to bundle a React app and Express to serve it in production. Express is used in development to serve an API server.
 
