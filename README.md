@@ -1,13 +1,11 @@
 # Pokedex-SQ
 
-My personal project for Dev Academy focusing on implementing software quality measures and applying best practices for the following web technoogies:
+My personal project for Dev Academy focusing on implementing software quality measures and applying best practices under the guise of a Pokedex web app.
 
-- react
-- typescript
-- consuming API's
+The pokedex will be a simple replication of the Pokemon identification device where the user can search for a Pokemon and get information regarding its stats, height, weight, skills and more. The reason for the simplicity is to practice software quality measures and best practices to increase my sense of code quality.
 
-I will create a simplified version of a Pokedex, as a web app, and apply software quality measures and best practices.
-
+<details style="padding-left: 2em">
+<summary>Original repo details</summary>
 This is a starter project that uses Vite to bundle a React app and Express to serve it in production. Express is used in development to serve an API server.
 
 Vite React App: [http://localhost:5173](http://localhost:5173)
@@ -33,6 +31,6 @@ To start the development server with a watcher that rebuilds your code, run `npm
 
 Additional components should be placed in `client/components`.
 
----
+---  
+</details>
 
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-react-api)
