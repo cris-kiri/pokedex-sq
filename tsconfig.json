@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "types": ["vite/client"],
-    "target": "es2020", 
+    "target": "ES6", 
     "jsx": "react-jsx",
-    "module": "ES2020",
+    "module": "ES6",
     "moduleResolution": "Bundler", 
     "noEmit": true,
     "isolatedModules": true, 
