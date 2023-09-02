@@ -20,23 +20,37 @@ export default function Pokemon(props: Props) {
   if (isLoading) return <div>Loading...</div>
 
   return (
-    <>
-      <h2>{pokemon?.name.toUpperCase()}</h2>
-      <img
-        src={pokemon?.sprites.front_default}
-        alt={pokemon?.name}
-        className="pokemon-image"
-      />
-      <p>HEIGHT: {pokemon?.height}</p>
-      <p>WEIGHT: {pokemon?.weight}</p>
-      {pokemon?.stats.map((stat) => (
-        <p key={stat.stat.name}>
-          {stat.stat.name.toUpperCase()}: {stat.base_stat}
-        </p>
-      ))}
-      {pokemon?.types.map((type) => (
-        <p key={type.type.name}>{type.type.name.toUpperCase()}</p>
-      ))}
-    </>
+    <div className="card">
+      <div id="pokemon-header">
+        <h2>
+          {pokemon?.name.toUpperCase()} #{pokemon?.id}
+        </h2>
+      </div>
+      <div>
+        <div className="pokemon-body">
+          <img
+            src={pokemon?.sprites.front_default}
+            alt={pokemon?.name}
+            className="pokemon-image"
+          />
+          <div className="pokemon-stats">
+            <div className="info">
+              <p>HEIGHT: {pokemon?.height}</p>
+              <p>WEIGHT: {pokemon?.weight}</p>
+              {pokemon?.types.map((type) => (
+                <p key={type.type.name}>{type.type.name.toUpperCase()}</p>
+              ))}
+            </div>
+            <div className="stats">
+              {pokemon?.stats.map((stat) => (
+                <p key={stat.stat.name}>
+                  {stat.stat.name.toUpperCase()}: {stat.base_stat}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
