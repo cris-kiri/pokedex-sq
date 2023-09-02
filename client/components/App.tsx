@@ -11,7 +11,7 @@ const App = () => {
             display: 'block',
             marginLeft: 'auto',
             marginRight: 'auto',
-            width: '625px',
+            width: '350px',
             height: 'auto',
           }}
         />
@@ -23,7 +23,7 @@ const App = () => {
           display: 'block',
           marginLeft: 'auto',
           marginRight: 'auto',
-          width: '400px',
+          width: '300px',
           height: 'auto',
         }}
       />

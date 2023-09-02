@@ -9,7 +9,7 @@ export default function Home() {
             display: 'block',
             marginLeft: 'auto',
             marginRight: 'auto',
-            width: '430px',
+            width: '300px',
             height: 'auto',
           }}
         />
