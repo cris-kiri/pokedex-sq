@@ -2,8 +2,6 @@ import * as Path from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
 
-import pokemonRoutes from './routes/pokemon.ts'
-
 const server = express()
 
 // Server configuration
@@ -14,7 +12,6 @@ server.use(express.urlencoded({ extended: false }))
 server.use(express.json())
 server.use(cors('*' as CorsOptions))
 
-server.use('/api/v1/pokemon', pokemonRoutes)
 server.use('/api/*', (req, res) => {
   res.sendStatus(404)
 })
