@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 
 import Pokemon from './Pokemon'
 import { fetchPokemonByGeneration } from '../apis/pokeapi'
+import * as utils from '../../utils/lib.ts'
 import { Species } from '../../models/pokemon'
 // import { Pokemon as PokemonType } from '../../models/pokemon'
 
@@ -31,7 +32,7 @@ export default function Pokedex() {
   }
 
   return (
-    <>
+    <div className="container">
       <h1>Gotta catch &apos;em all...</h1>
       <select
         value={gen}
@@ -52,11 +53,11 @@ export default function Pokedex() {
       >
         {generation?.pokemon_species.map((pokemon: Species) => (
           <option key={pokemon.name} value={pokemon.name}>
-            {pokemon.name}
+            {utils.capatiliseString(pokemon.name)}
           </option>
         ))}
       </select>
       <Pokemon name={pokemon} />
-    </>
+    </div>
   )
 }

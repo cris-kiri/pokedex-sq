@@ -21,8 +21,12 @@ export default function Pokemon(props: Props) {
 
   return (
     <>
-      <h2>{pokemon?.name}</h2>
-      <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+      <h2>{pokemon?.name.toUpperCase()}</h2>
+      <img
+        src={pokemon?.sprites.front_default}
+        alt={pokemon?.name}
+        className="pokemon-image"
+      />
       <p>HEIGHT: {pokemon?.height}</p>
       <p>WEIGHT: {pokemon?.weight}</p>
       {pokemon?.stats.map((stat) => (
