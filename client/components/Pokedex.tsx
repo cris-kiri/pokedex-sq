@@ -5,7 +5,6 @@ import Pokemon from './Pokemon'
 import { fetchPokemonByGeneration } from '../apis/pokeapi'
 import * as utils from '../../utils/lib.ts'
 import { Species } from '../../models/pokemon'
-// import { Pokemon as PokemonType } from '../../models/pokemon'
 
 export default function Pokedex() {
   const [gen, setGen] = useState('1')
@@ -51,14 +50,16 @@ export default function Pokedex() {
           id="pokemon"
           onChange={handlePokemonChange}
         >
-          {generation?.pokemon_species.map((pokemon: Species) => (
+          {generation?.results.map((pokemon: Species) => (
             <option key={pokemon.name} value={pokemon.name}>
               {utils.capatiliseString(pokemon.name)}
             </option>
           ))}
         </select>
       </div>
-      <Pokemon name={pokemon} />
+      <div className="card">
+        <Pokemon name={pokemon} />
+      </div>
     </div>
   )
 }
