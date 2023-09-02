@@ -6,6 +6,8 @@
 
 .centered {
   text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 .container {
@@ -19,7 +21,8 @@
   text-align: center;
   border: 2px solid black;
   padding: 20px;
-  margin: 20px;
+  margin-block: 10px;
+  margin-inline: 40px;
 }
 
 .selection * {
@@ -30,7 +33,8 @@
 }
 
 .card {
-  margin: 20px;
+  margin-block: 10px;
+  margin-inline: 40px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -52,30 +56,24 @@
 
 .pokemon-stats * {
   padding: 0.6rem;
+  width: 25vw;
 }
 
 .info {
   border: 1px solid black;
-  width: 300px;
+  /* width: 300px; */
   margin: 10px;
 }
 
 .stats {
   border: 1px solid black;
-  width: 300px;
+  /* width: 300px; */
   margin: 10px;
 }
 
-.main-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 img.pokemon-image {
-  width: 300px;
-  height: 300px;
+  width: 25vw;
+  height: 50%;
   border: 1px solid black;
   margin: 10px;
 }
