@@ -7,3 +7,11 @@ export async function fetchPokemonByGeneration(gen: number) {
 
   return response.body
 }
+
+export async function fetchPokemonByName(name: string) {
+  const response = await request.get(
+    `https://pokeapi.co/api/v2/pokemon/${name}`
+  )
+
+  return response.body
+}
