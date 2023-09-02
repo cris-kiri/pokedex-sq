@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 
 import { fetchPokemonByName } from '../apis/pokeapi'
 import { type Pokemon } from '../../models/pokemon'
+import LoadingPokeball from './LoadingPokeball'
 interface Props {
   name: string
 }
@@ -17,10 +18,10 @@ export default function Pokemon(props: Props) {
 
   if (error) return <div>There was an error!</div>
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <LoadingPokeball />
 
   return (
-    <div className="card">
+    <>
       <div id="pokemon-header">
         <h2>
           {pokemon?.name.toUpperCase()} #{pokemon?.id}
@@ -51,6 +52,6 @@ export default function Pokemon(props: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
