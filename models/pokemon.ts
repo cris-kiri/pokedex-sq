@@ -1,3 +1,6 @@
+/* eslint-disable no-empty */
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // To parse this data:
 //
 //   import { Convert, Pokemon } from "./file";
