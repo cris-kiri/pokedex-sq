@@ -33,30 +33,31 @@ export default function Pokedex() {
 
   return (
     <div className="container">
-      <h1>Gotta catch &apos;em all...</h1>
-      <select
-        value={gen}
-        name="generation"
-        id="generation"
-        onChange={handleGenChange}
-      >
-        <option value="1">Gen 1</option>
-        <option value="2">Gen 2</option>
-        <option value="3">Gen 3</option>
-      </select>
+      <div className="selection">
+        <select
+          value={gen}
+          name="generation"
+          id="generation"
+          onChange={handleGenChange}
+        >
+          <option value="1">Gen 1</option>
+          <option value="2">Gen 2</option>
+          <option value="3">Gen 3</option>
+        </select>
 
-      <select
-        value={pokemon}
-        name="pokemon"
-        id="pokemon"
-        onChange={handlePokemonChange}
-      >
-        {generation?.pokemon_species.map((pokemon: Species) => (
-          <option key={pokemon.name} value={pokemon.name}>
-            {utils.capatiliseString(pokemon.name)}
-          </option>
-        ))}
-      </select>
+        <select
+          value={pokemon}
+          name="pokemon"
+          id="pokemon"
+          onChange={handlePokemonChange}
+        >
+          {generation?.pokemon_species.map((pokemon: Species) => (
+            <option key={pokemon.name} value={pokemon.name}>
+              {utils.capatiliseString(pokemon.name)}
+            </option>
+          ))}
+        </select>
+      </div>
       <Pokemon name={pokemon} />
     </div>
   )
