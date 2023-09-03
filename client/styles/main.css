@@ -33,7 +33,6 @@ body {
   margin: auto;
   margin-bottom: 10px;
   width: 60%;
-  /* background-color: var(--background-color); */
   background-color: rgba(239, 239, 239, 0.6);
 }
 
@@ -54,7 +53,6 @@ body {
   border-radius: 8px;
   width: 60%;
   height: 90%;
-  /* background-color: var(--background-color); */
   background-color: rgba(239, 239, 239, 0.6);
 }
 
