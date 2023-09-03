@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { fetchPokemonByName } from '../apis/pokeapi'
-import { type Pokemon, Species } from '../../models/pokemon'
+import { type Pokemon } from '../../models/pokemon'
 import LoadingPokeball from './LoadingPokeball'
 interface Props {
   name: string
@@ -80,11 +80,6 @@ export default function Pokemon(props: Props) {
                 </td>
               </tr>
             </table>
-            {/* {pokemon?.stats.map((stat) => (
-                <p key={stat.stat.name}>
-                  {stat.stat.name.toUpperCase()}: {stat.base_stat}
-                </p>
-              ))} */}
           </div>
         </div>
       </div>
