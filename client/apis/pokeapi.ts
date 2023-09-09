@@ -1,5 +1,6 @@
 import request from 'superagent'
 
+// Fetches too much unnecessary data and requires filtering to list pokemon
 // export async function fetchPokemonByGeneration(gen: number) {
 //   const response = await request.get(
 //     `https://pokeapi.co/api/v2/generation/${gen}`
@@ -9,6 +10,7 @@ import request from 'superagent'
 // }
 
 export async function fetchPokemonByGeneration(gen: number) {
+  // Could get tricky to fetch pokemon when dealing with lots more generations
   if (gen === 1) {
     const response = await request.get(
       'https://pokeapi.co/api/v2/pokemon?limit=151'
