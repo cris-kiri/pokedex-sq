@@ -3,18 +3,17 @@ import { useQuery } from '@tanstack/react-query'
 import { fetchPokemonByName } from '../apis/pokeapi'
 import { type Pokemon } from '../../models/pokemon'
 import LoadingPokeball from './LoadingPokeball'
+import Stat from './Stat'
 interface Props {
   name: string
 }
 
-export default function Pokemon(props: Props) {
+export default function Pokemon({ name }: Props) {
   const {
     data: pokemon,
     error,
     isLoading,
-  } = useQuery<Pokemon>(['pokemon', props.name], () =>
-    fetchPokemonByName(props.name)
-  )
+  } = useQuery<Pokemon>(['pokemon', name], () => fetchPokemonByName(name))
 
   if (error) return <div>There was an error!</div>
 
@@ -36,49 +35,68 @@ export default function Pokemon(props: Props) {
         <div className="pokemon-stats">
           <div className="info">
             <table>
-              <tr>
-                <td>
-                  <h4>HEIGHT:</h4> {pokemon?.height}
-                </td>
-                <td>
-                  <h4>WEIGHT:</h4> {pokemon?.weight}
-                </td>
-              </tr>
-              <tr>
-                {pokemon?.types.map((type) => (
-                  <td key={type.type.name}>
-                    <h4>{type.type.name.toUpperCase()}</h4>
+              <tbody>
+                <tr>
+                  {pokemon?.types.map((type) => (
+                    <td key={type.type.name}>
+                      <Stat title={type.type.name} stat={0} />
+                    </td>
+                  ))}
+                </tr>
+                <tr>
+                  <td>
+                    <Stat title="height" stat={pokemon?.height || 1} />
                   </td>
-                ))}
-              </tr>
+                  <td>
+                    <Stat title="weight" stat={pokemon?.weight || 1} />
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div className="stats">
             <table>
-              <tr>
-                <td>
-                  <h4>HP:</h4> {pokemon?.stats[0].base_stat}
-                </td>
-                <td>
-                  <h4>SPEED:</h4> {pokemon?.stats[5].base_stat}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4>ATTACK:</h4> {pokemon?.stats[1].base_stat}
-                </td>
-                <td>
-                  <h4>SP ATTACK:</h4> {pokemon?.stats[3].base_stat}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4>DEFENSE:</h4> {pokemon?.stats[2].base_stat}
-                </td>
-                <td>
-                  <h4>SP DEFENSE:</h4> {pokemon?.stats[4].base_stat}
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>
+                    <Stat title="hp" stat={pokemon?.stats[0].base_stat || 1} />
+                  </td>
+                  <td>
+                    <Stat
+                      title="speed"
+                      stat={pokemon?.stats[5].base_stat || 1}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Stat
+                      title="attack"
+                      stat={pokemon?.stats[1].base_stat || 1}
+                    />
+                  </td>
+                  <td>
+                    <Stat
+                      title="sp attack"
+                      stat={pokemon?.stats[3].base_stat || 1}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Stat
+                      title="defense"
+                      stat={pokemon?.stats[2].base_stat || 1}
+                    />
+                  </td>
+                  <td>
+                    <Stat
+                      title="sp defense"
+                      stat={pokemon?.stats[4].base_stat || 1}
+                    />
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
