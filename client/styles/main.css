@@ -40,7 +40,7 @@ body {
   padding: 20px;
   margin: auto;
   margin-bottom: 10px;
-  width: 60%;
+  width: 80%;
   background-color: rgba(239, 239, 239, 0.6);
 }
 
@@ -59,7 +59,7 @@ body {
   align-items: center;
   border: 2px solid black;
   border-radius: 8px;
-  width: 60%;
+  width: 80%;
   height: 90%;
   background-color: rgba(239, 239, 239, 0.6);
 }
@@ -76,46 +76,140 @@ body {
 .pokemon-stats {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 40%;
 }
 
-.pokemon-stats * {
-  padding: 0.6rem;
-}
-
-.info {
-  border: 1px solid black;
-  border-radius: 8px;
-  margin-top: 10px;
-  background-color: rgba(29, 83, 147, 0.6);
-}
-
 .stats {
+  flex-grow: 1;
   border: 1px solid black;
   border-radius: 8px;
   margin-top: 10px;
   background-color: rgba(29, 83, 147, 0.6);
 }
 
-table {
-  width: 100%;
-  text-align: left;
-}
-
-td {
-  width: 50%;
-  height: 2rem;
+h4 {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
 }
 
 img.pokemon-image {
-  width: 30%;
-  height: 30%;
+  width: 33%;
+  height: 33%;
   border: 1px solid black;
   border-radius: 8px;
   margin: 10px;
 }
 
-h4 {
-  display: inline;
-  color: white;
+/* Necessary evil to display pokemon stats in a grid without using a table */
+.grid-container-info {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 4px;
+  padding-inline: 20px;
+  text-align: start;
+  align-items: center;
+}
+
+.grid-item-type-1 {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+}
+
+.grid-item-type-2 {
+  grid-column: 5 / 9;
+  grid-row: 1 / 2;
+}
+
+.grid-item-height-title {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+}
+
+.grid-item-height-value {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+.grid-item-weight-title {
+  grid-column: 5 / 8;
+  grid-row: 2 / 3;
+}
+
+.grid-item-weight-value {
+  grid-column: 8 / 9;
+  grid-row: 2 / 3;
+}
+
+.grid-container-stats {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 4px;
+  padding-inline: 20px;
+  text-align: start;
+  align-items: center;
+}
+
+.grid-item-stat-1-title {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.grid-item-stat-1-value {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+}
+
+.grid-item-stat-2-title {
+  grid-column: 5 / 8;
+  grid-row: 1 / 2;
+}
+
+.grid-item-stat-2-value {
+  grid-column: 8 / 9;
+  grid-row: 1 / 2;
+}
+
+.grid-item-stat-3-title {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+}
+
+.grid-item-stat-3-value {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+.grid-item-stat-4-title {
+  grid-column: 5 / 8;
+  grid-row: 2 / 3;
+}
+
+.grid-item-stat-4-value {
+  grid-column: 8 / 9;
+  grid-row: 2 / 3;
+}
+
+.grid-item-stat-5-title {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+}
+
+.grid-item-stat-5-value {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+}
+
+.grid-item-stat-6-title {
+  grid-column: 5 / 8;
+  grid-row: 3 / 4;
+}
+
+.grid-item-stat-6-value {
+  grid-column: 8 / 9;
+  grid-row: 3 / 4;
 }
