@@ -33,10 +33,12 @@ export default function Pokedex() {
   return (
     <div className="container">
       <div className="selection">
+        <label htmlFor="generation">Choose a generation:</label>
         <select
           value={gen}
           name="generation"
           id="generation"
+          tabIndex={0}
           onChange={handleGenChange}
         >
           <option value="1">Gen 1</option>
@@ -44,10 +46,12 @@ export default function Pokedex() {
           <option value="3">Gen 3</option>
         </select>
 
+        <label htmlFor="pokemon">Choose a pokemon:</label>
         <select
           value={pokemon}
           name="pokemon"
           id="pokemon"
+          tabIndex={0}
           onChange={handlePokemonChange}
         >
           {generation?.results.map((pokemon: Species) => (
