@@ -7,7 +7,7 @@ import * as utils from '../../utils/lib.ts'
 import { Species } from '../../models/pokemon'
 
 export default function Pokedex() {
-  const [gen, setGen] = useState(1)
+  const [gen, setGen] = useState('1')
   const [pokemon, setPokemon] = useState('bulbasaur')
   const {
     data: generation,
@@ -15,7 +15,7 @@ export default function Pokedex() {
     isError,
   } = useQuery(
     ['generation', gen],
-    async () => await fetchPokemonByGeneration(gen)
+    async () => await fetchPokemonByGeneration(Number(gen))
   )
 
   if (isLoading) return <div>Loading...</div>
@@ -23,7 +23,7 @@ export default function Pokedex() {
   if (isError) return <div>There was an error!</div>
 
   function handleGenChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    setGen(Number(event.target.value))
+    setGen(event.target.value)
   }
 
   function handlePokemonChange(event: React.ChangeEvent<HTMLSelectElement>) {
